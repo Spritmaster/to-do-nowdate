@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List || JavaScript</title>
+    <!-- STYLES CSS LINK -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <!-- CARD -->
+    <section class="card">
+        <!-- HEADER -->
+        <header>
+            <h3>
+                <span class="kun">K</span> -
+                <span class="oy">O</span>
+            </h3>
+            <h2>
+                <span class="soat">00</span> :
+                <span class="daqiqa">00</span> :
+                <span class="soniya">00</span>
+            </h2>
+        </header>
+        <!-- HEADER END -->
+
+        <!-- MAIN -->
+        <main>
+            <form class="main-form">
+                <input class="main-input" type="text" name="note" placeholder="Eslatma..." autocomplete="off" autofocus>
+                <button class="add-btn">+</button>
+            </form>
+            <ul class="todo-list">
+                <!-- <li class="todo-item">
+                    <span></span>
+                    <span></span>
+                    <button><img src="./images/svg/pen.svg" alt="edit"></button>
+                    <button><img src="./images/svg/delete.svg" alt="delete"></button>
+                </li> -->
+            </ul>
+        </main>
+        <!-- MAIN END -->
+    </section>
+    <!-- CARD END -->
+
+    <!-- OVERLAY -->
+    <div class="overlay hidden" id="overlay"></div>
+    <!-- MODAL -->
+    <div class="modal hidden">
+        <div class="modal-header">
+            <h3>Eslatmani o'zgaritirish!</h3>
+            <button class="close"><img src="./images/png/close.png" alt="close"></button>
+        </div>
+        <form class="modal-form">
+            <input type="text" name="note" placeholder="Eslatma..." autocomplete="off" autofocus>
+            <button class="add-btn">+</button>
+        </form>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

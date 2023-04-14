@@ -1,0 +1,280 @@
+/* SITE FONTS */
+/* inter-regular - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/inter-v12-latin-regular.woff2') format('woff2'),
+        url('../fonts/inter-v12-latin-regular.woff') format('woff');
+}
+/* inter-500 - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('../fonts/inter-v12-latin-500.woff2') format('woff2'),
+        url('../fonts/inter-v12-latin-500.woff') format('woff');
+}
+/* russo-one-regular - latin */
+@font-face {
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/russo-one-v14-latin-regular.woff2') format('woff2'),
+        url('../fonts/russo-one-v14-latin-regular.woff') format('woff');
+}
+
+/* VARIABLES */
+:root {
+    /* background colors */
+    --body-bg-img: url(../images/jpg/nature.jpg);
+    --header-img: url(../images/jpg/sun.jpg);
+    --input-bg-color: #EBEFF2;
+
+    /* colors */
+    --white-color: #fff;
+    --primary-color: #393E46;
+    --secondary-color: #4D4C7D;
+    --necessary-color: #827397;
+    --last-color: #000;
+
+    /* fonts */
+    --inter-font: 'Inter', "Arial", sans-serif;
+    --russo-font: "Russo One", "Arial", sans-serif;
+}
+
+/* GLOBAL STYLES */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--inter-font);
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.22;
+    background: var(--body-bg-img);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul, ol {
+    list-style: none;
+}
+button {
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    outline:none;
+    border: none;
+}
+h2, h3 {
+    font-family: var(--russo-font);
+    font-weight: 400;
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--white-bg-color);
+    border-radius: 1rem;
+    margin: 4rem auto 0;
+    background-color: var(--white-bg-color);
+}
+header {
+    width: 100%;
+    background-image:var(--header-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 9rem 3rem 1.5rem;
+    text-align: right;
+    border-radius: 1rem 1rem 0 0;
+    color: var(--white-color);
+}
+header h3 {
+    font-size: 1.8rem;
+}
+header h2 {
+    font-size: 4rem;
+    margin-left: auto;
+}
+
+/* MAIN styles */
+main {
+    background:url(../images/jpg/tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem 5rem;
+    border-radius: 0 0 1rem 1rem;
+}
+form {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+}
+input {
+    padding: 1.3rem 0 1.3rem 1.2rem;
+    background-color: var(--input-bg-color);
+    border: none;
+    flex-grow: 1;
+    outline: none;
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: 500;
+    -webkit-box-shadow: 1px 0px 13px 3px rgba(34, 60, 80, 0.26) inset;
+    -moz-box-shadow: 1px 0px 13px 3px rgba(34, 60, 80, 0.26) inset;
+    box-shadow: 1px 0px 13px 3px rgba(34, 60, 80, 0.26) inset;
+    border: #393E46 solid 2px;
+}
+input::placeholder {
+    color: var(--necessary-color);
+}
+.input-error::placeholder {
+    color: red;
+}
+.input-error {
+    border-color: red;
+}
+.add-btn {
+    font-size: 2.5rem;
+    font-family: var(--russo-font);
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--white-color);
+}
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 0.5rem 0.5rem;
+    color: var(--primary-color);
+    user-select: none;
+}
+.todo-item:first-child {
+    margin-top: 3rem;
+}
+button {
+    border: none;
+    transition: transform 0.2s ease;
+}
+button:hover {
+    transform: scale(1.13);
+}
+.todo-item span:first-child {
+    margin-right: auto;
+}
+.todo-item span:nth-child(2) {
+    margin-right: 2rem;
+    color: var(--last-color);
+    font-size: 1.4rem;
+}
+.todo-item button:not(:last-child) {
+    margin-right: 1rem;
+}
+.todo-item button:not(:last-child) img {
+    transform: rotate(90deg);
+}
+.todo-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+.complated {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/* Overlay styles */
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal styles */
+.modal {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--white-bg-color);
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 2rem;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    background-color: rgba(0,0,0,0.2);
+}
+.modal button img {
+    width: 25px;
+    height: 25px;
+}
+.modal form {
+    padding: 4rem 3rem;
+}
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 420px) {
+    .card {
+        min-height: 100vh;
+        margin: 0 auto 0;
+        border-radius: 0;
+    }
+    header {
+        border-radius: 0;
+    }
+    main {
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    form {
+        flex-direction: column;
+    }
+}
